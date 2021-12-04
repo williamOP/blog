@@ -25,7 +25,7 @@ layout: default
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <div class="col-lg-10 col-md-10 mx-auto">
 
         {{ content }}
 
@@ -34,30 +34,40 @@ layout: default
 
        
 
-        <!-- <span class="">
-          <img class="img-fluid img-profile rounded-circle mx-1 mb-2" src="img/test.jpg" alt="">
-        </span> -->
+        
         
         <article class="post-preview">
-          
+          <div class="d-flex align-self-center flex-md-nowrap flex-wrap justify-content-center">
+            <div class="">
+              <img class="img-fluid img-profile rounded-circle mx-1 mb-2" src="{{ post.background | prepend: site.baseurl | replace: '//', '/' }}" alt="">
+            </div>
 
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-            {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
-            {% endif %}
-            on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
-          </p>
+            
+            <div class="d-flex flex-wrap text-center text-md-left">
+              <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+                <h2 class="post-title align-self-center">{{ post.title }}</h2>
+              </a>
+                {% if post.subtitle %}
+                <p class="post-subtitle">{{ post.subtitle }}</p>
+                {% else %}
+                <p class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                {% endif %}
+
+                <p class="post-meta">Posted by
+                  {% if post.author %}
+                  {{ post.author }}
+                  {% else %}
+                  {{ site.author }}
+                  {% endif %}
+                  on
+                  {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}            
+                </p>
+            </div>
+            
+          </div>
+
+          
+          
         </article>
 
         <hr>
