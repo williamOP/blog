@@ -1,6 +1,6 @@
 title:              Dental Blog
 description:        Dental blog posts by William Hong
-author:             William Hong
+author:             Dr William Hong
 baseurl:            ""
 url:                ""
 
@@ -8,7 +8,7 @@ url:                ""
 twitter_username:   
 github_username:    
 facebook_username:  
-instagram_username:  drwilliamhong
+instagram_username:  # drwilliamhong
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
